@@ -1,0 +1,18 @@
+{
+  "name": "fb-updates-slack",
+  "version": "1.0.0",
+  "description": "A service to send fb messages from an inbox of a page to desired slack channel",
+  "main": "app.js",
+  "author": "codingWizard",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "@slack/web-api": "^7.0.4",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
