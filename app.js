@@ -14,12 +14,12 @@ const slackService = new SlackService(SLACK_TOKEN, CHANNEL_ID); // Initialize Sl
 app.use(express.json()); // Middleware for parsing JSON requests
 
 // POST endpoint for receiving messages
-app.post("/webhook", async (req, res) => {
+app.post("/webhook", (req, res) => {
   console.log("Received new message:", req.body);
 
   try {
     const message = extractMessageFromRequest(req.body); // Extract message from request
-    await slackService.sendMessage(message); // Send message using SlackService
+    slackService.sendMessage(message); // Send message using SlackService
     res.json({ success: true, message: "Message sent successfully" });
   } catch (error) {
     console.error("Error handling message:", error);
